@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elige tu nivel de claridad · Numerología</title>
+  <title>Elige según tu momento · Numerología Cabalística</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -18,9 +18,8 @@
       --gold: #e8c87a;
       --rose: #e87a9a;
       --text: #f0ecff;
-      --muted: #7868a8;
+      --muted: #8f81b9;
       --border: #2a2450;
-      --most-chosen: #c8a8ff;
     }
 
     * {
@@ -41,7 +40,6 @@
       overflow-x: hidden;
     }
 
-    /* Animated star background */
     .stars-bg {
       position: fixed;
       inset: 0;
@@ -110,21 +108,6 @@
       }
     }
 
-    .wrapper {
-      position: relative;
-      z-index: 1;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 52px 20px 60px;
-    }
-
-    /* HEADER */
-    .profile-area {
-      text-align: center;
-      margin-bottom: 40px;
-      animation: fadeUp 0.8s ease both;
-    }
-
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -135,6 +118,20 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 52px 20px 60px;
+    }
+
+    .profile-area {
+      text-align: center;
+      margin-bottom: 36px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .avatar-ring {
@@ -177,18 +174,57 @@
 
     .profile-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.3px;
       margin-bottom: 6px;
     }
 
     .profile-tagline {
-      font-size: 0.85rem;
+      font-size: 0.87rem;
       color: var(--muted);
-      line-height: 1.6;
-      max-width: 300px;
+      line-height: 1.65;
+      max-width: 320px;
       margin: 0 auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 26px;
+      animation: fadeUp 0.8s 0.08s ease both;
+    }
+
+    .intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 410px;
+      margin: 0 auto;
+    }
+
+    .delivery-pill {
+      margin: 18px auto 0;
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text);
+      max-width: 430px;
+    }
+
+    .delivery-pill span {
+      color: var(--muted);
     }
 
     .divider-stars {
@@ -210,44 +246,50 @@
       background: var(--border);
     }
 
-    /* INTRO TEXT */
-    .intro {
-      text-align: center;
-      margin-bottom: 32px;
-      animation: fadeUp 0.8s 0.1s ease both;
+    .currency-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px;
+      width: fit-content;
+      margin: 0 auto 24px;
+      animation: fadeUp 0.7s 0.12s ease both;
     }
 
-    .intro h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .intro h2 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .intro p {
-      font-size: 0.88rem;
+    .currency-btn {
+      padding: 8px 24px;
+      border-radius: 100px;
+      border: none;
+      background: transparent;
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 0.82rem;
+      font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
     }
 
-    /* PACKAGES */
+    .currency-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
     .packages {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
     .pkg-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 24px 22px;
       cursor: pointer;
       transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s, background 0.25s;
@@ -277,6 +319,14 @@
       box-shadow: 0 12px 40px rgba(120, 60, 220, 0.2);
     }
 
+    .pkg-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200, 168, 255, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
     .pkg-card.featured {
       border-color: var(--accent);
       background: linear-gradient(135deg, #1d1938, #16132a);
@@ -287,14 +337,6 @@
       box-shadow: 0 12px 50px rgba(200, 168, 255, 0.25);
     }
 
-    .pkg-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(200, 168, 255, 0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
     .badge-top {
       position: absolute;
       top: 16px;
@@ -302,32 +344,33 @@
       background: var(--accent);
       color: var(--bg);
       font-size: 0.65rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      padding: 4px 10px;
+      letter-spacing: 1.4px;
+      padding: 5px 10px;
       border-radius: 100px;
+    }
+
+    .pkg-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding-right: 88px;
     }
 
     .pkg-icon {
       font-size: 1.6rem;
-      margin-bottom: 10px;
       display: block;
-    }
-
-    .pkg-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 4px;
     }
 
     .pkg-price {
       font-size: 1.6rem;
       font-weight: 600;
       color: var(--gold);
-      margin-bottom: 14px;
       letter-spacing: -0.5px;
+      white-space: nowrap;
     }
 
     .pkg-price span {
@@ -339,29 +382,54 @@
       margin-left: 4px;
     }
 
+    .pkg-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.15;
+    }
+
+    .pkg-subtitle {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
     .pkg-features {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 9px;
+      margin-bottom: 16px;
     }
 
     .pkg-features li {
-      font-size: 0.85rem;
-      color: var(--muted);
+      font-size: 0.87rem;
+      color: var(--text);
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .pkg-features li::before {
       content: '✦';
       color: var(--accent);
       font-size: 0.65rem;
-      margin-top: 3px;
+      margin-top: 4px;
       flex-shrink: 0;
+    }
+
+    .pkg-features strong {
+      font-weight: 600;
+    }
+
+    .pkg-delivery {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 15px;
     }
 
     .pkg-cta {
@@ -377,6 +445,7 @@
       letter-spacing: 0.3px;
       cursor: pointer;
       border: none;
+      text-decoration: none;
     }
 
     .cta-outline {
@@ -410,55 +479,42 @@
       background: rgba(232, 200, 122, 0.1);
     }
 
-    /* SOCIAL LINKS */
-    .social-section {
-      animation: fadeUp 0.7s 0.45s ease both;
-    }
-
-    .social-label {
+    .microline {
+      margin-top: 10px;
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.5;
       text-align: center;
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
     }
 
-    .social-links {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    .social-btn {
-      flex: 1;
-      max-width: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
+    .trust-note {
       background: var(--surface);
-      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .trust-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .trust-note p {
       font-size: 0.82rem;
-      font-family: 'Outfit', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 5px;
     }
 
-    .social-btn:hover {
-      border-color: var(--accent);
+    .trust-note strong {
       color: var(--text);
+      font-weight: 600;
     }
 
-    .social-icon {
-      font-size: 1.1rem;
-    }
-
-    /* FREE OFFER */
     .free-offer {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -466,7 +522,7 @@
       padding: 20px;
       text-align: center;
       margin-bottom: 24px;
-      animation: fadeUp 0.7s 0.4s ease both;
+      animation: fadeUp 0.7s 0.43s ease both;
     }
 
     .free-offer .offer-emoji {
@@ -487,24 +543,6 @@
       color: var(--muted);
       margin-bottom: 14px;
       line-height: 1.6;
-    }
-
-    .free-offer .offer-btn {
-      display: inline-block;
-      padding: 10px 24px;
-      background: transparent;
-      border: 1px solid var(--rose);
-      color: var(--rose);
-      border-radius: 100px;
-      font-size: 0.82rem;
-      font-family: 'Outfit', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-    }
-
-    .free-offer .offer-btn:hover {
-      background: rgba(232, 122, 154, 0.1);
     }
 
     .form-fields {
@@ -559,38 +597,51 @@
       background: rgba(232, 122, 154, 0.12);
     }
 
-    /* CURRENCY TOGGLE */
-    .currency-toggle {
+    .social-section {
+      animation: fadeUp 0.7s 0.45s ease both;
+    }
+
+    .social-label {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .social-btn {
+      flex: 1;
+      max-width: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--surface);
+      gap: 8px;
+      padding: 12px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 4px;
-      width: fit-content;
-      margin: 0 auto 24px;
-      animation: fadeUp 0.7s 0.12s ease both;
-    }
-
-    .currency-btn {
-      padding: 8px 24px;
-      border-radius: 100px;
-      border: none;
-      background: transparent;
+      background: var(--surface);
       color: var(--muted);
       font-size: 0.82rem;
-      font-weight: 500;
       font-family: 'Outfit', sans-serif;
       cursor: pointer;
       transition: all 0.2s;
-      letter-spacing: 0.5px;
+      text-decoration: none;
     }
 
-    .currency-btn.active {
-      background: var(--accent);
-      color: var(--bg);
-      font-weight: 600;
+    .social-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .social-icon {
+      font-size: 1.1rem;
     }
 
     footer {
@@ -601,92 +652,132 @@
       line-height: 2;
       animation: fadeUp 0.7s 0.5s ease both;
     }
+
+    @media (max-width: 480px) {
+      .wrapper {
+        padding: 44px 16px 52px;
+      }
+
+      .intro h2 {
+        font-size: 1.82rem;
+      }
+
+      .pkg-head {
+        padding-right: 76px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Animated background -->
   <div class="stars-bg" id="starsBg"></div>
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
 
   <div class="wrapper">
 
-    <!-- Profile -->
     <div class="profile-area">
       <div class="avatar-ring">✨🤍</div>
       <div class="profile-name">Alexandra | Kabbalah</div>
-      <div class="profile-tagline">Numeróloga · Te ayudo a ver el patrón que se repite en tu vida para que puedas
-        cambiarlo.</div>
+      <div class="profile-tagline">
+        Numeróloga · Te ayudo a ver el patrón que se repite en tu vida para que puedas cambiarlo.
+      </div>
     </div>
 
-    <!-- Heading -->
     <div class="intro">
-      <h2>Elige tu nivel<br>de <em>claridad.</em></h2>
-      <p>Tu nombre y fecha de nacimiento contienen un mapa.<br>El objetivo es que lo veas — y que cambie tu forma de
-        decidir.</p>
+      <h2>Elige según tu momento</h2>
+      <p>Lecturas de numerología cabalística con guía práctica para entender tu patrón y empezar a ordenarlo con más claridad.</p>
+
+      <div class="delivery-pill">
+        📩 <strong>Recibes un PDF por email en 24 horas</strong><br>
+        <span>(numerología cabalística + guía práctica)</span>
+      </div>
+
       <div class="divider-stars">✦ ✦ ✦</div>
     </div>
 
-    <!-- Currency Toggle -->
     <div class="currency-toggle">
       <button class="currency-btn active" onclick="setCurrency('MXN', this)">🇲🇽 MXN</button>
       <button class="currency-btn" onclick="setCurrency('EUR', this)">🇪🇺 EUR</button>
     </div>
 
-    <!-- Packages -->
     <div class="packages">
 
-      <!-- Package 1: Mapa Base -->
-      <a class="pkg-card" id="card-basic" href="#" target="_blank">
-        <span class="pkg-icon">🗺️</span>
-        <div class="pkg-name">Mapa de Vida (Cabalístico)</div>
-        <div class="pkg-price" id="price-basic">$989 <span>MXN</span></div>
+      <a class="pkg-card" id="card-basic" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="pkg-head">
+          <span class="pkg-icon">🗺️</span>
+          <div class="pkg-price" id="price-basic">$989 <span>MXN</span></div>
+        </div>
+
+        <div class="pkg-name">Mapa Base (Cabalístico)</div>
+        <div class="pkg-subtitle">Claridad en tu patrón principal</div>
+
         <ul class="pkg-features">
-          <li>Tu patrón principal (por qué repites lo mismo)</li>
-          <li>Tus 3 bloqueos y cómo se activan</li>
-          <li>3 acciones para ordenar tu energía esta semana</li>
+          <li>Tu estructura base: cómo operas en <strong>amor / propósito / calma / dinero</strong></li>
+          <li>El <strong>patrón que más se repite</strong> (y por qué se activa)</li>
+          <li>Recomendaciones claras para <strong>ordenar tu energía</strong> desde hoy</li>
         </ul>
-        <button class="pkg-cta cta-outline">Quiero claridad</button>
+
+        <div class="pkg-delivery">PDF por email en 24h</div>
+        <button class="pkg-cta cta-outline">Quiero mi Mapa Base →</button>
       </a>
 
-      <!-- Package 2: Plan 30 Días (Cabalístico) (Featured) -->
-      <a class="pkg-card featured" id="card-pro" href="#" target="_blank">
+      <a class="pkg-card featured" id="card-pro" href="#" target="_blank" rel="noopener noreferrer">
         <div class="badge-top">Más elegido</div>
-        <span class="pkg-icon">🌙</span>
-        <div class="pkg-name">Integración 30 días</div>
-        <div class="pkg-price" id="price-pro">$1,099 <span>MXN</span></div>
+
+        <div class="pkg-head">
+          <span class="pkg-icon">🌙</span>
+          <div class="pkg-price" id="price-pro">$1,099 <span>MXN</span></div>
+        </div>
+
+        <div class="pkg-name">Integración 30 Días</div>
+        <div class="pkg-subtitle">De claridad a acción (plan diario)</div>
+
         <ul class="pkg-features">
-          <li>Todo lo anterior +</li>
-          <li>Plan de 30 días (guía diaria: estructura + acción)</li>
-          <li>Activación de talentos + manejo de retos (luz/sombra)</li>
-          <li>Checklist semanal para sostener hábitos</li>
+          <li>Todo lo del <strong>Mapa Base</strong></li>
+          <li>Plan práctico de 30 días: <strong>estructura + acción</strong> (sin abrumarte)</li>
+          <li>Activación de cualidades: <strong>ciclos, talentos y retos</strong> (luz/sombra)</li>
         </ul>
-        <button class="pkg-cta cta-filled">Quiero el plan de 30 días</button>
+
+        <div class="pkg-delivery">PDF por email en 24h</div>
+        <button class="pkg-cta cta-filled">Quiero mi Plan 30 días →</button>
+        <div class="microline">Ideal si te sientes saturada y quieres sostener cambios.</div>
       </a>
 
-      <!-- Package 3: Arquitectura Completa -->
-      <a class="pkg-card" id="card-premium" href="#" target="_blank">
-        <span class="pkg-icon">🏛️</span>
-        <div class="pkg-name">Arquitectura Total (Nombre + Fecha)</div>
-        <div class="pkg-price" id="price-premium">$2,055 <span>MXN</span></div>
+      <a class="pkg-card" id="card-premium" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="pkg-head">
+          <span class="pkg-icon">🏛️</span>
+          <div class="pkg-price" id="price-premium">$2,055 <span>MXN</span></div>
+        </div>
+
+        <div class="pkg-name">Arquitectura Completa</div>
+        <div class="pkg-subtitle">Fecha + Nombre (lectura profunda)</div>
+
         <ul class="pkg-features">
-          <li>Lectura completa (letras + números)</li>
-          <li>Plan de 90 días + 1 ajuste posterior</li>
-          <li>Audio personalizado 5–10 min (para volver a escucharlo)</li>
+          <li>Incluye tu <strong>nombre completo</strong> (letras + números)</li>
+          <li>Plan de 90 días + <strong>1 ajuste posterior</strong></li>
+          <li>Audio personalizado de 5–10 min (para volver a escucharlo)</li>
         </ul>
-        <button class="pkg-cta cta-gold">Quiero mi lectura completa</button>
+
+        <div class="pkg-delivery">PDF por email en 24h (+ audio)</div>
+        <button class="pkg-cta cta-gold">Quiero mi Lectura Completa →</button>
       </a>
 
     </div>
 
-    <!-- Free hook -->
+    <div class="trust-note">
+      <div class="trust-title">Antes de pedir tu lectura</div>
+      <p><strong>Qué necesito:</strong> tu fecha de nacimiento (y nombre completo solo en Arquitectura Completa).</p>
+      <p><strong>Entrega:</strong> PDF por email en 24 horas.</p>
+      <p><strong>Importante:</strong> autoconocimiento; no sustituye terapia.</p>
+    </div>
+
     <div class="free-offer">
       <span class="offer-emoji">✨</span>
       <div class="offer-title">¿No sabes por dónde empezar?</div>
-      <div class="offer-desc">Escribe tu nombre y fecha de nacimiento — te calculo tu número de vida gratis y te
-        respondo por correo.</div>
+      <div class="offer-desc">Escribe tu nombre y fecha de nacimiento — te calculo tu número de vida gratis y te respondo por correo.</div>
+
       <div id="form-area">
         <div class="form-fields">
           <input class="form-input" type="text" id="f-nombre" placeholder="Tu nombre completo" />
@@ -695,15 +786,14 @@
         </div>
         <button class="offer-btn-submit" onclick="submitForm()">Calcular mi número gratis ✦</button>
       </div>
+
       <div id="form-success" style="display:none; padding: 12px 0;">
         <div style="font-size:1.8rem; margin-bottom:8px;">🔮</div>
         <div style="font-size:0.95rem; font-weight:500; margin-bottom:6px;">¡Recibido!</div>
-        <div style="font-size:0.82rem; color:var(--muted); line-height:1.6;">Te escribimos pronto con tu número de vida.
-        </div>
+        <div style="font-size:0.82rem; color:var(--muted); line-height:1.6;">Te escribimos pronto con tu número de vida.</div>
       </div>
     </div>
 
-    <!-- Social -->
     <div class="social-section">
       <div class="social-label">Sígueme en</div>
       <div class="social-links">
@@ -765,17 +855,34 @@
       }
     }
 
-
     const STRIPE_LINKS = {
-      basic: { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" },
-      pro: { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805", EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a" },
-      premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806", EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809" }
+      basic: {
+        MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804",
+        EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807"
+      },
+      pro: {
+        MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805",
+        EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a"
+      },
+      premium: {
+        MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806",
+        EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809"
+      }
     };
 
     const PRICES = {
-      basic: { MXN: "$989 <span>MXN</span>", EUR: "€57 <span>EUR</span>" },
-      pro: { MXN: "$1,099 <span>MXN</span>", EUR: "€64 <span>EUR</span>" },
-      premium: { MXN: "$2,055 <span>MXN</span>", EUR: "€119 <span>EUR</span>" }
+      basic: {
+        MXN: "$989 <span>MXN</span>",
+        EUR: "€57 <span>EUR</span>"
+      },
+      pro: {
+        MXN: "$1,099 <span>MXN</span>",
+        EUR: "€64 <span>EUR</span>"
+      },
+      premium: {
+        MXN: "$2,055 <span>MXN</span>",
+        EUR: "€119 <span>EUR</span>"
+      }
     };
 
     let currentCurrency = 'MXN';
@@ -791,23 +898,21 @@
       });
     }
 
-    // Set initial Stripe links (MXN default)
     setCurrency('MXN', document.querySelector('.currency-btn.active'));
 
-    // Generate twinkling stars
     const bg = document.getElementById('starsBg');
     for (let i = 0; i < 80; i++) {
       const star = document.createElement('div');
       star.className = 'star';
       star.style.cssText = `
-      left: ${Math.random() * 100}%;
-      top: ${Math.random() * 100}%;
-      --dur: ${2 + Math.random() * 4}s;
-      --op: ${0.2 + Math.random() * 0.5};
-      animation-delay: ${Math.random() * 5}s;
-      width: ${Math.random() > 0.7 ? 3 : 2}px;
-      height: ${Math.random() > 0.7 ? 3 : 2}px;
-    `;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        --dur: ${2 + Math.random() * 4}s;
+        --op: ${0.2 + Math.random() * 0.5};
+        animation-delay: ${Math.random() * 5}s;
+        width: ${Math.random() > 0.7 ? 3 : 2}px;
+        height: ${Math.random() > 0.7 ? 3 : 2}px;
+      `;
       bg.appendChild(star);
     }
   </script>
